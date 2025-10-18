@@ -163,7 +163,7 @@ class Sale(models.Model):
     PAYMENT_METHOD_CHOICES = [
         ('cash', 'Cash'),
         ('card', 'Card'),
-        ('mobile', 'Mobile Money'),
+        ('mobile', 'M-Pesa'),
     ]
     
     STATUS_CHOICES = [
@@ -307,7 +307,7 @@ class Payment(models.Model):
     PAYMENT_METHOD_CHOICES = [
         ('cash', 'Cash'),
         ('card', 'Card'),
-        ('mobile', 'Mobile Money'),
+        ('mobile', 'M-Pesa'),
     ]
     
     sale = models.ForeignKey(

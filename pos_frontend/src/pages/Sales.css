@@ -109,6 +109,17 @@
   border-bottom: none;
 }
 
+/* Out of stock styling */
+.search-result-item.out-of-stock {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: #f8d7da;
+}
+
+.search-result-item.out-of-stock:hover {
+  background: #f8d7da;
+}
+
 .search-result-item .product-info {
   display: flex;
   flex-direction: column;
@@ -136,7 +147,35 @@
 }
 
 .search-result-item .stock.low {
+  color: #ffc107;
+}
+
+.search-result-item .stock.out {
   color: #dc3545;
+  font-weight: bold;
+}
+
+/* Stock error message */
+.stock-error-message {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  color: #856404;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 0 20px;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cart-section {
@@ -178,6 +217,13 @@
   border-radius: 8px;
   padding: 15px;
   background: #fafafa;
+  transition: all 0.3s;
+}
+
+/* Stock issue styling */
+.cart-item.stock-issue {
+  border: 2px solid #dc3545;
+  background: #fff5f5;
 }
 
 .item-header {
@@ -190,6 +236,21 @@
 .item-header strong {
   color: #333;
   font-size: 16px;
+}
+
+/* Stock warning banner */
+.stock-warning {
+  background: #fff3cd;
+  color: #856404;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #ffc107;
 }
 
 .btn-remove {
@@ -229,6 +290,11 @@
   font-size: 16px;
 }
 
+.low-stock-text {
+  color: #dc3545;
+  font-weight: 600;
+}
+
 .quantity-controls {
   display: flex;
   gap: 8px;
@@ -245,6 +311,17 @@
   cursor: pointer;
   font-size: 18px;
   line-height: 1;
+  transition: all 0.3s;
+}
+
+.quantity-controls button:hover:not(:disabled) {
+  background: #5568d3;
+}
+
+.quantity-controls button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .quantity-controls input {
@@ -350,6 +427,8 @@
 .btn-checkout:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background: #ccc;
+  transform: none;
 }
 
 .form-group {
@@ -423,6 +502,7 @@
 .btn-complete:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  background: #ccc;
 }
 
 .error-message {
