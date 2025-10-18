@@ -1,0 +1,31 @@
+# Product Upload CSV Template
+
+Create a CSV file with the following columns:
+
+```csv
+name,sku,barcode,category,description,price,cost_price,tax_rate,stock_quantity,min_stock_level
+Laptop Computer,LAP001,123456789012,Electronics,High-performance laptop,999.99,750.00,16,50,10
+Wireless Mouse,MOU001,123456789013,Electronics,Ergonomic wireless mouse,29.99,15.00,16,200,20
+Office Chair,CHR001,123456789014,Furniture,Comfortable office chair,199.99,120.00,16,30,5
+Coffee Mug,MUG001,123456789015,Kitchen,Ceramic coffee mug,9.99,4.00,16,500,50
+Notebook A4,NOT001,123456789016,Stationery,200 pages ruled notebook,4.99,2.00,16,1000,100
+```
+
+## Column Descriptions:
+
+- **name** (required): Product name
+- **sku** (required): Unique stock keeping unit code
+- **barcode** (optional): Product barcode
+- **category** (optional): Category name (will be created if doesn't exist)
+- **description** (optional): Product description
+- **price** (required): Selling price
+- **cost_price** (optional): Cost price for profit calculation
+- **tax_rate** (optional): Tax percentage (e.g., 16 for 16%)
+- **stock_quantity** (optional): Initial stock quantity
+- **min_stock_level** (optional): Minimum stock level for alerts
+
+## Notes:
+- Make sure SKU codes are unique
+- Barcodes must be unique if provided
+- Categories will be auto-created if they don't exist
+- Default values: tax_rate=0, stock_quantity=0, min_stock_level=10
